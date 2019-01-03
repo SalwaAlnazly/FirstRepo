@@ -1,4 +1,5 @@
 import React from 'react';
+import SelectBox from './selectBox'
 
 export default class RadioBtnSection extends React.Component{
     constructor() {
@@ -46,6 +47,7 @@ export default class RadioBtnSection extends React.Component{
                    onChange={this.radioChange} />Ms.
   
             </span>
+            <SelectBox />
           </div> 
         );
       }
