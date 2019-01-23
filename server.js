@@ -1,6 +1,6 @@
 const app = require('express')();
-const http = require('http').Server(app)
-const io = require('socket.io')(http);
+const server = require('http').Server(app)
+const io = require('socket.io')(server);
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 io.sockets.on('connection', (socket) => {
     socket.on("send message", (newMsg) => {
         io.sockets.emit("new message", newMsg)
-        socket.broadcast.emit("new message", newMsg)
+        // socket.broadcast.emit("new message", newMsg)
     })
 }) 
 

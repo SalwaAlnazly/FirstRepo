@@ -76,6 +76,9 @@
                    // clear msg value
                    ev.target.value = ""
                 }
+                socket.on("new message", (data) => {
+                  messages.append(data + "<br />")  
+                })
         })
     </script>
 </body>
