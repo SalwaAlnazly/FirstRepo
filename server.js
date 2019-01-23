@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
 io.sockets.on('connection', (socket) => {
     socket.on("send message", (newMsg) => {
         io.sockets.emit("new message", newMsg)
+        socket.broadcast.emit("new message", newMsg)
     })
 }) 
 
