@@ -54,3 +54,13 @@ Client Side
        - @param userList {object} Object with key value pairs of users
        - @param user {User} the user to added to the list
        - @return userList {Object} Object with key value pairs of Users 
+     - removeUser ()
+       - Remove user from the list passed in
+       - @param userList {object} Object with key value pairs of users
+       - @param username {string} name of user to be removed
+       - @return userList {Object} Object with key value pairs of Users 
+     - isUser()
+       - Check if the user is in list passed in 
+       - @param userList {object} Object with key value pairs of users 
+       - @param username {string}
+       - @return userList {Object} Object with key value pairs of Users
