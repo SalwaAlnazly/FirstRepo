@@ -10,7 +10,6 @@ export default class Layout extends React.Component {
             socket=null 
         }
     }
-    // In life cycle of react componentWillMount invoke function
     componentWillMount () {
         this.initSocket()
     }
