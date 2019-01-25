@@ -8,12 +8,19 @@ export default class Layout extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            socket=null
+            socket=null 
         }
+    }
+    // In life cycle of react componentWillMount invoke function
+    componentWillMount () {
+        this.initSocket()
     }
     // create initSocket function which initialize socket for us 
     initSocket = () => {
        const socket = io(socketUrl)
+       socket.on('connected', () => {
+           console.log("connected");
+       })
        this.setState({socket})
     }
     render() {
