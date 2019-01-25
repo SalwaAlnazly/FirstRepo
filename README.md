@@ -38,6 +38,9 @@ Client Side
           - users {Array.string}
    - getTime() return string represented in 24hr time i.e. '20:15'
       - @param date(Date)
+      
+ - creates login form (nickname) component
+
 
  Server Side
   - Setup express server with socket io connection
