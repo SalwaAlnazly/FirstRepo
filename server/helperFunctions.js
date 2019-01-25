@@ -19,6 +19,18 @@ module.exports = (socket) => {
     /** User connects with username */
 }
 
+/**
+ * Remove user from the list passed in
+ * @param userList {object} Object with key value pairs of users
+ * @param username {string} name of user to be removed
+ * @return userList {Object} Object with key value pairs of Users
+ */
+
+ function removeUser (userList, username) {
+     let newList = Object.assign({}, userList)
+     delete newList[username]
+     return newList
+ }
 
 /**
  * Check if the user is in list passed in 
