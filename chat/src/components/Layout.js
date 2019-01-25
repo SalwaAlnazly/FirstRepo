@@ -1,6 +1,6 @@
 import React from 'react';
 import io from "socket.io-client";
-import { USER_CONNECTED, LOGOUT } from "../actions/index";
+import { USER_CONNECTED, LOGOUT } from "../../../Events";
 import LoginForm from './LoginForm'
 
 const socketUrl = ""   // socketUrl use to connect client side to our server

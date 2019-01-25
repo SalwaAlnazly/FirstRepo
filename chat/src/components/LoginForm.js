@@ -1,5 +1,5 @@
 import React from 'react';
-import {VERIFY_USER} from '../functions'
+import {VERIFY_USER} from '../../../factories'
 
 export default class LoginForm extends React.Component {
     constructor(props) {
@@ -10,6 +10,8 @@ export default class LoginForm extends React.Component {
         }
     }
     setUser = ({user, isUser}) => {
+        console.log("user", user);
+        console.log("isUser", isUser);  
         if(isUser) {
             this.setError("User name taken")
         } else {
