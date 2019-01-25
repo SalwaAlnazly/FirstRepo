@@ -2,14 +2,14 @@ const io = require('./index.js')
 const { VERIFY_USER, USER_CONNECTED, LOGOUT } = require("../Events")
 const { createUser, createMessage, createChat } = require("../factories")
 
-const connectedUser = {}
+const connectedUsers = {}
 
 module.exports = (socket) => {
     console.log("Socket Id" + socket.id);
 
     /** Verify username */
     socket.on(VERIFY_USER, (callback) => {
-        if (isUser(connectedUser, nickname)) {
+        if (isUser(connectedUsers, nickname)) {
             callback({ isUser: true, user: null })
         } else {
             callback({ isUser: false, user: createUser({ name: nickname }) })
@@ -17,6 +17,12 @@ module.exports = (socket) => {
     });
 
     /** User connects with username */
+    socket.on(USER_CONNECTED, (user) => {
+        connectedUsers = addUser(connectedUsers, user)
+        socket.user = user
+        console.log("connectedUsers", connectedUsers);
+        
+    })
 }
 
 /**
