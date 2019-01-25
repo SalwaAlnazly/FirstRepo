@@ -37,6 +37,7 @@ Client Side
           - name {string}
           - users {Array.string}
    - getTime() return string represented in 24hr time i.e. '20:15'
+      - @param date(Date)
 
  Server Side
   - Setup express server with socket io connection

@@ -1,17 +1,23 @@
 const uuidv4 = require('uuid/v4');
 
 /** create a user  */
-const createUser = ({name = ""} = {}) => ({
-       id: uuidv4(),
-       name
+const createUser = ({ name = "" } = {}) => ({
+    id: uuidv4(),
+    name
 })
 
-const createMessage = ({message = "", sender= ""} = {}) => ({
+/** create a message object  */
+const createMessage = ({ message = "", sender = "" } = {}) => ({
     id: uuidv4(),
-    time: new Date(Date.now()),
+    time: getTime(new Date(Date.now())),
     message,
     sender
 })
+
+/** getTime() return string represented in 24hr time i.e. '20:15'  */
+const getTime = (date) => {
+    return `${date.getHours()}: ${("0".getMinutes()).slice(-2)}`
+}
 
 module.exports = {
     createUser,
