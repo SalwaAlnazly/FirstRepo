@@ -9,6 +9,13 @@ export default class LoginForm extends React.Component {
             error: ""
         }
     }
+    setUser = ({user, isUser}) => {
+        if(isUser) {
+            this.setError("User name taken")
+        } else {
+            this.props.setUser(user)
+        }
+    }
     handleSubmit = (e) => {
         e.preventDefault()
         const {socket} = this.props

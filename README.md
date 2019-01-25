@@ -39,7 +39,7 @@ Client Side
    - getTime() return string represented in 24hr time i.e. '20:15'
       - @param date(Date)
       
- - creates login form (nickname) component
+ - creates login form with nickname input component and handle change and submit it
 
 
  Server Side
