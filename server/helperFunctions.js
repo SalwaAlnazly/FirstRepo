@@ -20,7 +20,13 @@ module.exports = (socket) => {
 }
 
 
-
+/**
+ * Check if the user is in list passed in 
+ * @param userList {object} Object with key value pairs of users
+ * @param username {string}
+ * @return userList {Object} Object with key value pairs of Users
+ * 
+ */
 function isUser(userList, username) {
-
+   return username in userList
 }
