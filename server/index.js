@@ -1,7 +1,7 @@
 const app = require('express')()
 const server = require('http').Server
 const io = require('socket.io')(server)
-const ChatSocket = require('./chat-socket')
+const ChatSocket = require('./helperFunctions')
 
 
 io.on('connection', ChatSocket);

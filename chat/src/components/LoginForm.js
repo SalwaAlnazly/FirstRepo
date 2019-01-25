@@ -26,6 +26,10 @@ export default class LoginForm extends React.Component {
     handleChange = (e) => {
         this.setState({nickname: e.target.value})
     }
+
+    setError = (error) => {
+        this.setState({error})
+    }
     render() {
         const { nickname, error } = this.state
         return (

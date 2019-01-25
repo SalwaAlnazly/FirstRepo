@@ -40,7 +40,17 @@ Client Side
       - @param date(Date)
       
  - creates login form with nickname input component and handle change and submit it
-
+ - check if user name is taken or not 
 
  Server Side
   - Setup express server with socket io connection
+  - Verify username
+  - User connects with username
+  - User disconnects
+  - User logouts
+  - Create helper functions
+     - addUser() 
+       - Adds user to list passed in 
+       - @param userList {object} Object with key value pairs of users
+       - @param user {User} the user to added to the list
+       - @return userList {Object} Object with key value pairs of Users 
