@@ -20,17 +20,29 @@ module.exports = (socket) => {
 }
 
 /**
+ * Adds user to list passed in
+ * @param userList {object} Object with key value pairs of users
+ * @param user {User} the user to added to the list
+ * @return userList {Object} Object with key value pairs of Users
+ */
+function addUser(userList, user) {
+    let newList = Object.assign({}, userList)
+    newList[user.name] = user
+    return newList
+}
+
+/**
  * Remove user from the list passed in
  * @param userList {object} Object with key value pairs of users
  * @param username {string} name of user to be removed
  * @return userList {Object} Object with key value pairs of Users
  */
 
- function removeUser (userList, username) {
-     let newList = Object.assign({}, userList)
-     delete newList[username]
-     return newList
- }
+function removeUser(userList, username) {
+    let newList = Object.assign({}, userList)
+    delete newList[username]
+    return newList
+}
 
 /**
  * Check if the user is in list passed in 
@@ -40,5 +52,5 @@ module.exports = (socket) => {
  * 
  */
 function isUser(userList, username) {
-   return username in userList
+    return username in userList
 }
