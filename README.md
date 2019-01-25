@@ -9,6 +9,7 @@ Client Side
    - Verify user action  
    - Logout action
 
+ - Sets the user property in state (USER_CONNECTED)
 
  Server Side
   - Setup express server with socket io connection
