@@ -4,7 +4,6 @@ import io from "socket.io-client";
 const socketUrl = ""   // socketUrl use to connect client side to our server
 
 export default class Layout extends React.Component {
-       // In client side connect to io server
     constructor(props) {
         super(props)
         this.state = {
@@ -15,7 +14,7 @@ export default class Layout extends React.Component {
     componentWillMount () {
         this.initSocket()
     }
-    // create initSocket function which initialize socket for us 
+    // Connect to and initialize the socket
     initSocket = () => {
        const socket = io(socketUrl)
        socket.on('connected', () => {

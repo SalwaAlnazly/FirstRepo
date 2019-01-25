@@ -1,5 +1,8 @@
 # FirstRepo
 
-In client side connect to io server
-Create initSocket function which initialize socket for us 
-In life cycle of react componentWillMount invoke function
+Client Side 
+ - Connect to and initialize the socket
+
+
+ Server Side
+  - Setup express server with socket io connection
