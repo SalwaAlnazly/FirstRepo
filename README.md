@@ -36,6 +36,7 @@ Client Side
           - messages {Array.message}
           - name {string}
           - users {Array.string}
+   - getTime() return string represented in 24hr time i.e. '20:15'
 
  Server Side
   - Setup express server with socket io connection
