@@ -10,6 +10,32 @@ Client Side
    - Logout action
 
  - Sets the user property in state (USER_CONNECTED)
+ - Sets the user property in state to null (LOGOUT)
+ - Create required function
+   - creates a user
+      - @prop id {string}
+      - @prop name {string}
+      - @param {object}
+        - name {string}
+
+   - creates a messages object 
+      - @prop id {string}
+      - @prop time {Date} the time in 24hr format i.e 17:30
+      - @prop message {string} actual string message
+      - @prop sender {string} sender of message
+      - @param {object} 
+          - message {string}
+          - sender {string}
+
+   - creates a chat object 
+      - @prop id {string}
+      - @prop name {string}
+      - @prop messages {Array.message}
+      - @prop users {Array.string}
+      - @param {object}
+          - messages {Array.message}
+          - name {string}
+          - users {Array.string}
 
  Server Side
   - Setup express server with socket io connection
