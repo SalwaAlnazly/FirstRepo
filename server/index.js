@@ -1,11 +1,11 @@
-const app = require('express')()
-const server = require('http').Server
-const io = require('socket.io')(server)
-const ChatSocket = require('./helperFunctions')
+const app = require('express')();
+const http = require('http').Server(app)
+const io = require('socket.io')(http);
 
+const ChatSocket = require('./helperFunctions')
 
 io.on('connection', ChatSocket);
 
-app.listen('8080', () => {
-    console.log('server is running on port: ', port)
+http.listen(8080, () => {
+	console.log("Server is running on http://localhost:8080");
 })

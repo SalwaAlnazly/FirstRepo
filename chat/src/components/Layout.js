@@ -1,9 +1,8 @@
 import React from 'react';
-import io from "socket.io-client";
-import { USER_CONNECTED, LOGOUT } from "../../../Events";
+import { USER_CONNECTED, LOGOUT } from "../Events";
 import LoginForm from './LoginForm'
 
-const socketUrl = ""   // socketUrl use to connect client side to our server
+import openSocket from 'socket.io-client';
 
 export default class Layout extends React.Component {
     constructor(props) {
@@ -18,19 +17,27 @@ export default class Layout extends React.Component {
     }
     /*** Connect to and initialize the socket */
     initSocket = () => {
-        const { socket } = io(socketUrl)
-        socket.on('connected', () => {
+       this.state.socket  = openSocket('http://localhost:8080/');
+        // const { socket } = io(socketUrl)
+        // console.log('soc', this.state.socket);
+        
+        this.state.socket.on('connected', () => {
             console.log("connected");
+            // this.setState({ this.state.socket })
         })
-        this.setState({ socket })
+        // this.setState({ socket })
     }
 
     /**
      * Sets the user property in state
      */
     setUser = (user) => {
-        const { socket } = this.state
-        socket.emit(USER_CONNECTED, user)
+        console.log('soc', user);
+        
+        // const { socket } = this.state
+        this.state.socket.emit('USER_CONNECTED', user)
+        console.log('user', user);
+        
         this.setState({ user })
     }
 
@@ -44,11 +51,10 @@ export default class Layout extends React.Component {
         this.setState({ user: null })
     }
     render() {
-        const { title } = this.props
-        const {socket} = this.state
+        // const {socket} = this.state
         return (
             <div className="container">
-                <LoginForm socket={socket} setUser={this.setUser} />
+                <LoginForm socket={this.state.socket} setUser={this.setUser} />
             </div>
         )
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {VERIFY_USER} from '../../../factories'
+import {VERIFY_USER} from '../factories'
 
 export default class LoginForm extends React.Component {
     constructor(props) {
@@ -16,13 +16,19 @@ export default class LoginForm extends React.Component {
             this.setError("User name taken")
         } else {
             this.props.setUser(user)
+            this.setError("")
         }
     }
     handleSubmit = (e) => {
         e.preventDefault()
         const {socket} = this.props
         const {nickname} = this.state
-        socket.emit(VERIFY_USER, nickname, this.setUser)
+        console.log('po',this.props.socket);
+        console.log('name', this.state.nickname);
+        console.log('this.setUser',this.setUser);
+        
+        
+        socket.emit('VERIFY_USER', nickname, this.setUser)
     }
 
     handleChange = (e) => {
