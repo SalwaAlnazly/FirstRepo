@@ -4,7 +4,8 @@ export default class LoginFormWithNickname extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
-            nickname : ""  // set the inital state of the application
+            nickname : "",  // set the initial state of the application
+            submitted: false
         }
     }
     nicknameChangeHandler = (e) => {

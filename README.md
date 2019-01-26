@@ -67,5 +67,7 @@ Client Side
 
 
 Phase 2
- - create a very simple login screen where the user can enter their name and press a submit button
-    to enter the chat room 
+ - create a very simple login screen where the user can enter their nickname and press a submit button to enter the chat room 
+    - set the inital state of our app
+    - create our events handlers and have set our state correctly
+    - check the 'submitted' property inside state and render the chat room if this 'true'
