@@ -17,15 +17,16 @@ export default class Layout extends React.Component {
     }
     /*** Connect to and initialize the socket */
     initSocket = () => {
-       this.state.socket  = openSocket('http://localhost:8080/');
+       const socket  = openSocket('http://localhost:8080/');
         // const { socket } = io(socketUrl)
         // console.log('soc', this.state.socket);
         
-        this.state.socket.on('connected', () => {
+        socket.on('connected', () => {
             console.log("connected");
             // this.setState({ this.state.socket })
         })
-        // this.setState({ socket })
+        this.setState({ socket })
+        console.log('this.state.socket', this.state.socket);
     }
 
     /**

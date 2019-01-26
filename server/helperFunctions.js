@@ -6,7 +6,6 @@ let connectedUsers = {}
 
 module.exports = (socket) => {
     console.log("Socket Id" + socket.id);
-
     /** Verify username */
     socket.on('VERIFY_USER', (callback) => {
         console.log(';;;;;;;;;;;;;', callback);
@@ -20,8 +19,6 @@ module.exports = (socket) => {
 
     /** User connects with username */
     socket.on('USER_CONNECTED', (user) => {   
-        console.log('llllllllllllll');
-             
         connectedUsers = addUser(connectedUsers, user)
         socket.user = user
         io.emit('USER_CONNECTED', connectedUsers)

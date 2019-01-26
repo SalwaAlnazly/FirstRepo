@@ -64,3 +64,8 @@ Client Side
        - @param userList {object} Object with key value pairs of users 
        - @param username {string}
        - @return userList {Object} Object with key value pairs of Users
+
+
+Phase 2
+ - create a very simple login screen where the user can enter their name and press a submit button
+    to enter the chat room 

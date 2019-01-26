@@ -4,7 +4,12 @@ const io = require('socket.io')(http);
 
 const ChatSocket = require('./helperFunctions')
 
-io.on('connection', ChatSocket);
+io.on('connection', (socket) => {
+	socket.on('disconnected', () => {
+		console.log('Client is disconnecting');
+		
+	})
+});
 
 http.listen(8080, () => {
 	console.log("Server is running on http://localhost:8080");
