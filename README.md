@@ -79,4 +79,6 @@ Phase 2
      - key -> the key which tell the render the index of the current component in the loop
      - nickname -> the name of the user who sent the message
      - message -> the actual body of the message
-     - fromMe -> a boolean that defines if the message was sent from the current user (we show diffrent styles based on his i.e right or left side of the screen box) 
+     - fromMe -> a boolean that defines if the message was sent from the current user (we show different styles based on his i.e right or left side of the screen box) 
+
+     - "the messages component should automatically scroll to the bottom when a new message is received"
