@@ -64,3 +64,21 @@ Client Side
        - @param userList {object} Object with key value pairs of users 
        - @param username {string}
        - @return userList {Object} Object with key value pairs of Users
+
+
+Phase 2
+ - create a very simple login screen where the user can enter their nickname and press a submit button to enter the chat room 
+    - set the initial state of our app
+    - create our events handlers and have set our state correctly
+    - check the 'submitted' property inside state and render the chat room if this 'true'
+
+ - chat room 
+   - message component (array of messages) => put these messages to state
+   - input box emits an onSend event , we should create an event handler that takes this event , adds the message to the state and sends it to the server
+   - loop through all the messages in the state and create a message component with three properties:
+     - key -> the key which tell the render the index of the current component in the loop
+     - nickname -> the name of the user who sent the message
+     - message -> the actual body of the message
+     - fromMe -> a boolean that defines if the message was sent from the current user (we show different styles based on his i.e right or left side of the screen box) 
+
+     - "the messages component should automatically scroll to the bottom when a new message is received"
