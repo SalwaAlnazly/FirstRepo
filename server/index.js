@@ -14,7 +14,6 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
   console.log("we're connected to mongoStore");
-  
 });
 
 //use sessions for tracking logins
@@ -34,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 // include routes
-const routes = require('./routes/router');
+const routes = require('./routes/index');
 app.use('/users', routes);
 
 // catch 404 and forward to error handler

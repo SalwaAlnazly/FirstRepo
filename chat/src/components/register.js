@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import * as Socket from './socket';
 
-export default class Login extends Component {
+export default class Register extends Component {
     state = {
-        username: '',
+        email: '',
+        username: "",
         password: '',
         userData: {}
     }
+
 
     handleInputChange = (e) => {
         const { value, name } = e.target;
@@ -16,7 +18,7 @@ export default class Login extends Component {
     }
     onSubmit = (e) => {
         e.preventDefault();
-        fetch('/users/login', {
+        fetch('/users/register', {
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: {
@@ -25,7 +27,6 @@ export default class Login extends Component {
         })
             .then(response => {
                 console.log(this.state);
-
                 if (response.ok) {
                     return response.json();
                 } else {
@@ -33,8 +34,10 @@ export default class Login extends Component {
                 }
             })
             .then(data => {
+                console.log("data", data);
+                
                 Socket.onOpenConnection(data)
-                window.location = "/messages"
+                window.location = "/login"
             }
             )
             .catch(err => {
@@ -45,12 +48,20 @@ export default class Login extends Component {
     render() {
         return (
             <form onSubmit={this.onSubmit}>
-                <h1>Login</h1>
+                <h1>Sign up</h1>
                 <input
                     type="text"
                     name="username"
                     placeholder="Enter username"
                     value={this.state.username}
+                    onChange={this.handleInputChange}
+                    required
+                />
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter email"
+                    value={this.state.email}
                     onChange={this.handleInputChange}
                     required
                 />
@@ -62,7 +73,6 @@ export default class Login extends Component {
                     onChange={this.handleInputChange}
                     required
                 />
-         
                 <input type="submit" value="Submit" />
             </form>
         );

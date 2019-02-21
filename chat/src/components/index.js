@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import * as Socket from './socket';
-
 export default class Login extends Component {
-    state = {
-        username: '',
-        password: '',
-        userData: {}
+    constructor(props) {
+        super(props)
+        this.state = {
+            email: '',
+            username: "",
+            password: '',
+            passwordConf: "",
+            userData: {}
+        };
     }
 
-    handleInputChange = (e) => {
-        const { value, name } = e.target;
+    handleInputChange = (event) => {
+        const { value, name } = event.target;
         this.setState({
             [name]: value
         });
     }
-    onSubmit = (e) => {
-        e.preventDefault();
-        fetch('/users/login', {
+    onSubmit = (event) => {
+        event.preventDefault();
+        fetch('/users/', {
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: {
@@ -25,7 +29,7 @@ export default class Login extends Component {
         })
             .then(response => {
                 console.log(this.state);
-
+                
                 if (response.ok) {
                     return response.json();
                 } else {
@@ -33,8 +37,7 @@ export default class Login extends Component {
                 }
             })
             .then(data => {
-                Socket.onOpenConnection(data)
-                window.location = "/messages"
+            Socket.onOpenConnection(data)
             }
             )
             .catch(err => {
@@ -55,6 +58,14 @@ export default class Login extends Component {
                     required
                 />
                 <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter email"
+                    value={this.state.email}
+                    onChange={this.handleInputChange}
+                    required
+                />
+                <input
                     type="password"
                     name="password"
                     placeholder="Enter password"
@@ -62,7 +73,14 @@ export default class Login extends Component {
                     onChange={this.handleInputChange}
                     required
                 />
-         
+                <input
+                    type="password"
+                    name="passwordConf"
+                    placeholder="Enter passwordConf"
+                    value={this.state.passwordConf}
+                    onChange={this.handleInputChange}
+                    required
+                />
                 <input type="submit" value="Submit" />
             </form>
         );
