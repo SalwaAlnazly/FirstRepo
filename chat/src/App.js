@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import Layout from "./components/Layout";
+import Login from './components/login';
+import Register from './components/register'
+
 
 class App extends Component {
-
-
   render() {
     return (
       <div className="App">
-        <Layout />
+        <Register />
+        <Login />
       </div>
     );
   }
 }
 
 export default App;
+
+
