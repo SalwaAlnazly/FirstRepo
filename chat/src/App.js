@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from './components/login';
 import Register from './components/register'
+import Messages from './components/messages'
 
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="App">
         <Register />
         <Login />
+        <Messages />
       </div>
     );
   }
