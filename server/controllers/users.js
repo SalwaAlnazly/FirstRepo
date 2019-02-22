@@ -5,15 +5,10 @@ exports.register = (req, res, next) => {
 
     if (email && username && password) {
         const userData = { email, username, password }
-        console.log("userData", userData);
         User.create(userData, (err, user) => {
             if (err) {
-                console.log('err', err);
-                
                 return next(err);
             } else {
-                console.log("userData", userData);
-                
                 req.session.userId = user._id;
                 console.log('req.session.userId', req.session.userId);
                 return res.json({ userData, userId: req.session.userId })
