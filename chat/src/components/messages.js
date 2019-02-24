@@ -15,19 +15,19 @@ export default class Messages extends React.Component {
     componentDidMount = () => {
         Socket.fetchUserUrl(window.location.pathname)
         Socket.onLoadAdminMessages(this.loadAdminMessages)
+       
     }
 
     loadAdminMessages = messages => {
         console.table(messages)
         if (messages && Array.isArray(messages)) {
             this.setState({
-                admin: {
+                admin: {    
                     messages
                 }
             })
         }
     }
-
 
     handleSendMessage = (e) => {
         e.preventDefault()
@@ -60,8 +60,8 @@ export default class Messages extends React.Component {
                                 message.author == "Durgham" ?
                                     <span>
                                         <div className="message-data align-right">
-                                            <span className="message-time" >{message.createdAt}</span> &nbsp; &nbsp;
-                                            <span className="message-name">{message.author}</span> <i className="fa fa-circle me"></i>
+                                            <span className="message-time" >{message.createdAt}</span> 
+                                            <span className="message-name">{message.author}</span> 
 
                                         </div>
                                         <div className="message other-message float-right">
@@ -70,9 +70,8 @@ export default class Messages extends React.Component {
                                     </span> : <span>
                                         <div className="message-data">
 
-                                            <span className="message-name">{message.author}</span> <i className="fa fa-circle me"></i>
-                                            <span className="message-time" >{message.createdAt}</span> &nbsp; &nbsp;
-
+                                            <span className="message-name">{message.author}</span> 
+                                            <span className="message-time" >{message.createdAt}</span> 
                                     </div>
                                         <div className="message my-message">
                                             {message.body}
