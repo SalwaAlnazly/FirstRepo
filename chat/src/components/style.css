@@ -1,0 +1,144 @@
+.chat-container{
+    display: flex;
+    margin: 12px 11px;
+    background: white;
+    border-radius: 5px;
+  }
+  
+
+    
+  .about-user {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin-top: 3px;
+  }
+    
+  .about-user {
+    padding-left: 8px;
+  }
+    
+  .last-message {
+    margin: 2px;
+    font-size: 10px;
+    color: #8080808f;
+  }
+
+  .avatar {
+    float: left;
+    width: 30px;
+    height: 30px;
+  }
+    
+  
+  .chat {
+   margin: 50px auto;
+    background:#3735461f;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #434651;
+  }
+  .chat-header {
+    padding: 20px;
+    border-bottom: 2px solid white;
+  }   
+  
+  .chat-about {
+    float: left;
+    padding-left: 10px;
+    margin-top: 6px;
+  }
+      
+  .chat-with {
+    font-weight: bold;
+    font-size: 16px;
+  }
+      
+  .chat-body {
+    padding: 30px 30px 20px;
+    border-bottom: 2px solid white;
+    overflow-y: scroll;
+    height: 221px;
+    width: 569px;
+  }  
+  .message-data {
+    margin-bottom: 15px;
+  }
+      
+  .message-time {
+    color: lighten(gray, 8%);
+    font-size: 12px;
+    padding-left: 6px;
+  }
+      
+  .message {      
+    color: white;
+    padding: 18px 20px;
+    /* line-height: 26px; */
+    font-size: 16px;
+    border-radius: 7px;
+    margin-bottom: 30px;
+    /* width: 90%; */
+    position: relative;
+  }
+  .my-message {
+    background: #9E9E9E;
+  }
+  
+  .other-message {
+    background: #373546;
+  }
+  .other-message::after {
+    border-bottom-color: blue;
+    left: 80%;
+  
+}
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.float-right {
+  float: right;
+}
+.chat-message {
+  padding: 30px;
+}
+  textarea {
+    width: 100%;
+    border: none;
+    padding: 10px 20px;
+    font: 14px/22px "Lato", Arial, sans-serif;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    resize: none;
+    
+  }
+
+  .input-filed {
+    width: 400px;
+    border: none;
+    padding: 12px;
+}
+
+.send {
+    margin: 12px;
+    border: none;
+    background: #373546;
+    padding: 12px;
+    border-radius: 3px;
+}
+
+  
+  .left::after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+  }
+  

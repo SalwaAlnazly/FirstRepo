@@ -34,7 +34,7 @@ export default class Login extends Component {
             })
             .then(data => {
                 Socket.onOpenConnection(data)
-                window.location = "/messages"
+                window.location = `/${data.userId}`
             }
             )
             .catch(err => {

@@ -15,7 +15,7 @@ ReactDOM.render(
                 <div className='page-body main-container'>
                     <Route path="/" exact component={Register} />
                     <Route path="/login" exact component={Login} />
-                    <Route path="/messages" exact component={Messages} />
+                    <Route path="/:id" exact component={Messages} />
                 </div>
 
             </Switch>
